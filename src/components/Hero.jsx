@@ -1,5 +1,6 @@
 import { Link } from "react-scroll";
-import { COMPANY_NAME, TAGLINE } from "../data/constants";
+import { FaPhone, FaFax, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+import { COMPANY_NAME, TAGLINE, PHONE, FAX, EMAIL, ADDRESS } from "../data/constants";
 
 export default function Hero() {
   return (
@@ -22,7 +23,7 @@ export default function Hero() {
           Licensed & Medicare/Medicaid Certified Home Health Agency serving the Dallas-Fort Worth community.
         </p>
 
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
           <Link
             to="contact"
             smooth={true}
@@ -41,6 +42,30 @@ export default function Hero() {
           >
             Our Services
           </Link>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4 max-w-xl mx-auto text-[17px] font-semibold text-white/90 tracking-[-0.374px]">
+          <a href={`tel:${PHONE}`} className="flex items-center justify-center sm:justify-start gap-3 hover:text-white transition-colors">
+            <FaPhone className="text-bright-blue text-sm" />
+            <span>{PHONE}</span>
+          </a>
+          <div className="flex items-center justify-center sm:justify-start gap-3">
+            <FaFax className="text-bright-blue text-sm" />
+            <span>Fax: {FAX}</span>
+          </div>
+          <a href={`mailto:${EMAIL}`} className="flex items-center justify-center sm:justify-start gap-3 hover:text-white transition-colors sm:col-span-2">
+            <FaEnvelope className="text-bright-blue text-sm" />
+            <span>{EMAIL}</span>
+          </a>
+          <a
+            href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(ADDRESS)}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center sm:justify-start gap-3 hover:text-white transition-colors sm:col-span-2"
+          >
+            <FaMapMarkerAlt className="text-bright-blue text-sm shrink-0" />
+            <span>{ADDRESS}</span>
+          </a>
         </div>
       </div>
     </section>

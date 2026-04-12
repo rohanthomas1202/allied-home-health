@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-scroll";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { NAV_LINKS } from "../data/constants";
+import logo from "../assets/logo.png";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,7 +17,7 @@ export default function Navbar() {
             duration={500}
             className="flex items-center gap-1.5 cursor-pointer"
           >
-            <span className="text-white text-lg font-semibold tracking-tight">+</span>
+            <img src={logo} alt="Allied Home Health Care" className="h-8 w-auto" />
             <span className="text-white font-semibold text-xs tracking-tight">Allied Health</span>
           </Link>
 

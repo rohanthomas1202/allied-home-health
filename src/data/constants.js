@@ -13,13 +13,15 @@ export const HOURS = {
 };
 
 export const SERVICE_AREAS = [
-  "Carrollton",
-  "Dallas",
+  "Collin",
   "Denton",
+  "Dallas",
+  "Tarrant",
   "Rockwall",
-  "Irving",
-  "Fort Worth",
+  "Hunt",
+  "Kaufman",
   "Johnson",
+  "Ellis",
 ];
 
 export const INSURANCE = ["Medicare", "Medicaid"];

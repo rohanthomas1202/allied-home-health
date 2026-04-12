@@ -1,6 +1,7 @@
 import { Link } from "react-scroll";
 import { FaPhone, FaFax, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 import { COMPANY_NAME, TAGLINE, ENTITY_NAME, ADDRESS, PHONE, FAX, EMAIL, NAV_LINKS } from "../data/constants";
+import logo from "../assets/logo.png";
 
 export default function Footer() {
   return (
@@ -8,8 +9,8 @@ export default function Footer() {
       <div className="max-w-[980px] mx-auto px-4 sm:px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
-            <div className="flex items-center gap-1.5 mb-3">
-              <span className="text-white text-lg font-semibold">+</span>
+            <div className="flex items-center gap-2 mb-3">
+              <img src={logo} alt="Allied Home Health Care" className="h-10 w-auto" />
               <span className="text-white font-semibold text-[14px] tracking-[-0.224px]">
                 {COMPANY_NAME}
               </span>
