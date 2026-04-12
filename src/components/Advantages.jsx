@@ -26,23 +26,28 @@ const advantages = [
 
 export default function Advantages() {
   return (
-    <section id="advantages" className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-light">
-      <div className="max-w-7xl mx-auto">
+    <section id="advantages" className="py-20 px-4 sm:px-6 bg-black">
+      <div className="max-w-[980px] mx-auto">
         <SectionHeading
           title="Why Choose Allied?"
           subtitle="Advantages of Allied Home Health Care"
+          dark={true}
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-[820px] mx-auto">
           {advantages.map((item) => (
             <div
               key={item.title}
-              className="bg-white rounded-xl p-6 flex gap-4 items-start shadow-sm hover:shadow-md transition-shadow duration-300"
+              className="bg-dark-surface-1 rounded-lg p-6 flex gap-4 items-start"
             >
-              <FaCheckCircle className="text-green-primary text-xl mt-1 shrink-0" />
+              <FaCheckCircle className="text-bright-blue text-lg mt-1 shrink-0" />
               <div>
-                <h3 className="font-bold text-gray-dark mb-1">{item.title}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">{item.description}</p>
+                <h3 className="text-[17px] font-semibold text-white leading-[1.24] tracking-[-0.374px] mb-1">
+                  {item.title}
+                </h3>
+                <p className="text-[14px] text-white/60 leading-[1.43] tracking-[-0.224px] text-left">
+                  {item.description}
+                </p>
               </div>
             </div>
           ))}

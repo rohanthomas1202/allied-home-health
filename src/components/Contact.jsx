@@ -77,25 +77,29 @@ export default function Contact() {
   ];
 
   return (
-    <section id="contact" className="py-16 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
+    <section id="contact" className="py-20 px-4 sm:px-6 bg-gray-light">
+      <div className="max-w-[980px] mx-auto">
         <SectionHeading
           title="Contact Us"
           subtitle="Reach out to us for any inquiries or to schedule a consultation"
         />
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
-          <div className="space-y-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-[820px] mx-auto">
+          <div className="space-y-3">
             {contactInfo.map((item) => {
               const Icon = item.icon;
               const content = (
-                <div className="flex items-start gap-4 p-4 bg-gray-light rounded-xl">
-                  <div className="w-10 h-10 bg-green-primary/10 rounded-full flex items-center justify-center shrink-0">
-                    <Icon className="text-green-primary" />
+                <div className="flex items-start gap-4 p-4 bg-white rounded-lg">
+                  <div className="w-9 h-9 bg-apple-blue/10 rounded-full flex items-center justify-center shrink-0">
+                    <Icon className="text-apple-blue text-sm" />
                   </div>
                   <div>
-                    <p className="text-sm text-gray-500 font-medium">{item.label}</p>
-                    <p className="text-gray-dark font-medium whitespace-pre-line">{item.value}</p>
+                    <p className="text-[12px] text-black/48 font-semibold tracking-[-0.12px] leading-[1.33]">
+                      {item.label}
+                    </p>
+                    <p className="text-[14px] text-near-black font-normal tracking-[-0.224px] leading-[1.43] whitespace-pre-line">
+                      {item.value}
+                    </p>
                   </div>
                 </div>
               );
@@ -116,19 +120,21 @@ export default function Contact() {
             })}
           </div>
 
-          <div className="bg-gray-light rounded-2xl p-8">
+          <div className="bg-white rounded-lg p-8">
             {submitted ? (
               <div className="text-center py-12">
-                <div className="w-16 h-16 bg-green-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-green-primary text-3xl">&#10003;</span>
+                <div className="w-14 h-14 bg-apple-blue/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-apple-blue text-2xl">&#10003;</span>
                 </div>
-                <h3 className="text-xl font-bold text-gray-dark mb-2">Thank You!</h3>
-                <p className="text-gray-600 mb-4">
+                <h3 className="text-[21px] font-bold text-near-black leading-[1.19] tracking-[0.231px] mb-2">
+                  Thank You!
+                </h3>
+                <p className="text-[14px] text-black/80 leading-[1.43] tracking-[-0.224px] mb-4">
                   We've received your message and will get back to you shortly.
                 </p>
                 <button
                   onClick={() => setSubmitted(false)}
-                  className="text-green-primary font-semibold hover:underline cursor-pointer"
+                  className="text-link-blue text-[14px] font-normal hover:underline cursor-pointer tracking-[-0.224px]"
                 >
                   Send another message
                 </button>
@@ -136,7 +142,7 @@ export default function Contact() {
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-dark mb-1">
+                  <label htmlFor="name" className="block text-[12px] font-semibold text-near-black mb-1 tracking-[-0.12px]">
                     Full Name
                   </label>
                   <input
@@ -146,12 +152,12 @@ export default function Contact() {
                     required
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-green-primary focus:outline-none transition"
+                    className="w-full border border-black/10 rounded-[11px] p-3 text-[17px] tracking-[-0.374px] focus:ring-2 focus:ring-apple-blue focus:outline-none transition bg-[#fafafc]"
                     placeholder="Your full name"
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-dark mb-1">
+                  <label htmlFor="email" className="block text-[12px] font-semibold text-near-black mb-1 tracking-[-0.12px]">
                     Email
                   </label>
                   <input
@@ -161,12 +167,12 @@ export default function Contact() {
                     required
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-green-primary focus:outline-none transition"
+                    className="w-full border border-black/10 rounded-[11px] p-3 text-[17px] tracking-[-0.374px] focus:ring-2 focus:ring-apple-blue focus:outline-none transition bg-[#fafafc]"
                     placeholder="your@email.com"
                   />
                 </div>
                 <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-gray-dark mb-1">
+                  <label htmlFor="phone" className="block text-[12px] font-semibold text-near-black mb-1 tracking-[-0.12px]">
                     Phone
                   </label>
                   <input
@@ -175,12 +181,12 @@ export default function Contact() {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-green-primary focus:outline-none transition"
+                    className="w-full border border-black/10 rounded-[11px] p-3 text-[17px] tracking-[-0.374px] focus:ring-2 focus:ring-apple-blue focus:outline-none transition bg-[#fafafc]"
                     placeholder="(xxx) xxx-xxxx"
                   />
                 </div>
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-dark mb-1">
+                  <label htmlFor="message" className="block text-[12px] font-semibold text-near-black mb-1 tracking-[-0.12px]">
                     Message
                   </label>
                   <textarea
@@ -190,17 +196,17 @@ export default function Contact() {
                     rows={4}
                     value={formData.message}
                     onChange={handleChange}
-                    className="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-green-primary focus:outline-none transition resize-none"
+                    className="w-full border border-black/10 rounded-[11px] p-3 text-[17px] tracking-[-0.374px] focus:ring-2 focus:ring-apple-blue focus:outline-none transition resize-none bg-[#fafafc]"
                     placeholder="How can we help you?"
                   />
                 </div>
                 {error && (
-                  <p className="text-red-600 text-sm bg-red-50 p-3 rounded-lg">{error}</p>
+                  <p className="text-red-600 text-[14px] bg-red-50 p-3 rounded-lg">{error}</p>
                 )}
                 <button
                   type="submit"
                   disabled={submitting}
-                  className="w-full bg-green-primary text-white font-bold py-3 px-6 rounded-lg hover:bg-green-light transition-colors duration-300 cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
+                  className="w-full bg-apple-blue text-white font-normal text-[17px] py-[8px] px-[15px] rounded-lg hover:brightness-110 transition-all duration-200 cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
                 >
                   {submitting ? "Sending..." : "Send Message"}
                 </button>
