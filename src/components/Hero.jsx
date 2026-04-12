@@ -38,7 +38,7 @@ export default function Hero() {
             smooth={true}
             offset={-48}
             duration={500}
-            className="inline-block px-[15px] py-[8px] border border-white/40 text-bright-blue text-[17px] font-normal rounded-[980px] cursor-pointer hover:underline transition-all duration-200"
+            className="inline-block px-[15px] py-[8px] bg-apple-blue text-white text-[17px] font-normal rounded-lg cursor-pointer hover:brightness-110 transition-all duration-200"
           >
             Our Services
           </Link>
