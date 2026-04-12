@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+@theme {
+  --color-green-primary: #2E7D32;
+  --color-green-light: #4CAF50;
+  --color-blue-primary: #1565C0;
+  --color-blue-light: #1976D2;
+  --color-gold: #F9A825;
+  --color-gold-light: #FDD835;
+  --color-gray-light: #F5F5F5;
+  --color-gray-dark: #333333;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
