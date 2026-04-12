@@ -7,7 +7,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 w-full z-50 bg-black/80 backdrop-blur-[20px] backdrop-saturate-[180%]">
+    <nav className="hidden md:block fixed top-0 w-full z-50 bg-black/80 backdrop-blur-[20px] backdrop-saturate-[180%]">
       <div className="max-w-[980px] mx-auto px-4 sm:px-6">
         <div className="flex justify-between items-center h-12">
           <div className="hidden md:flex items-center gap-6 mx-auto">
