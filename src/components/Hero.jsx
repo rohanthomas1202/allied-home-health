@@ -10,7 +10,7 @@ export default function Hero() {
       <div className="absolute inset-0 bg-black/70" />
 
       <div className="relative z-10 text-center px-4 max-w-[980px] mx-auto">
-        <h1 className="text-[56px] sm:text-[56px] font-semibold text-white leading-[1.07] tracking-[-0.28px] mb-2">
+        <h1 className="text-[32px] sm:text-[56px] font-semibold text-white leading-[1.07] tracking-[-0.28px] mb-2">
           {COMPANY_NAME}
         </h1>
 
