@@ -26,8 +26,8 @@ const advantages = [
 
 export default function Advantages() {
   return (
-    <section id="advantages" className="py-20 px-4 sm:px-6 relative">
-      <div className="absolute inset-0 bg-black/80" />
+    <section id="advantages" className="dark-section py-20 px-4 sm:px-6 relative">
+      <div className="absolute inset-0 bg-black/60" />
       <div className="relative z-10 max-w-[980px] mx-auto">
         <SectionHeading
           title="Why Choose Allied?"

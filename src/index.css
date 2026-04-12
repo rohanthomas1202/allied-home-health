@@ -35,9 +35,14 @@ h1, h2, h3 {
   font-family: -apple-system, "SF Pro Display", "SF Pro Icons", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-/* Disable parallax on mobile — bg-fixed is broken on iOS/Android */
+/* Disable parallax bg on mobile — bg-fixed is broken on iOS/Android */
 @media (max-width: 768px) {
-  .bg-fixed {
-    background-attachment: scroll !important;
+  .parallax-wrapper {
+    background-image: none !important;
+  }
+  .dark-section {
+    background-image: var(--hero-bg) !important;
+    background-size: cover !important;
+    background-position: center !important;
   }
 }

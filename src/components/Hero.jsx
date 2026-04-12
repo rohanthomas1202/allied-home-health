@@ -5,9 +5,9 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="min-h-screen flex items-center justify-center relative"
+      className="dark-section min-h-screen flex items-center justify-center relative"
     >
-      <div className="absolute inset-0 bg-black/70" />
+      <div className="absolute inset-0 bg-black/50" />
 
       <div className="relative z-10 text-center px-4 max-w-[980px] mx-auto">
         <h1 className="text-[32px] sm:text-[56px] font-semibold text-white leading-[1.07] tracking-[-0.28px] mb-2">
