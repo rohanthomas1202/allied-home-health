@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { FaMapMarkerAlt, FaPhone, FaEnvelope, FaClock } from "react-icons/fa";
+import { FaMapMarkerAlt, FaPhone, FaFax, FaEnvelope, FaClock } from "react-icons/fa";
 import SectionHeading from "./SectionHeading";
-import { ADDRESS, PHONE, EMAIL, HOURS } from "../data/constants";
+import { ADDRESS, PHONE, FAX, EMAIL, HOURS, FORMSPREE_ID } from "../data/constants";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -11,19 +11,36 @@ export default function Contact() {
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState("");
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Integration point: Replace with Formspree or EmailJS
-    // Formspree: change form action to "https://formspree.io/f/YOUR_ID" and method="POST"
-    // EmailJS: use emailjs.sendForm() here
-    console.log("Form submitted:", formData);
-    setSubmitted(true);
-    setFormData({ name: "", email: "", phone: "", message: "" });
+    setSubmitting(true);
+    setError("");
+
+    try {
+      const response = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setSubmitted(true);
+        setFormData({ name: "", email: "", phone: "", message: "" });
+      } else {
+        setError("Something went wrong. Please try again or call us directly.");
+      }
+    } catch {
+      setError("Network error. Please try again or call us directly.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   const contactInfo = [
@@ -38,6 +55,12 @@ export default function Contact() {
       label: "Phone",
       value: PHONE,
       href: `tel:${PHONE}`,
+    },
+    {
+      icon: FaFax,
+      label: "Fax",
+      value: FAX,
+      href: null,
     },
     {
       icon: FaEnvelope,
@@ -171,11 +194,15 @@ export default function Contact() {
                     placeholder="How can we help you?"
                   />
                 </div>
+                {error && (
+                  <p className="text-red-600 text-sm bg-red-50 p-3 rounded-lg">{error}</p>
+                )}
                 <button
                   type="submit"
-                  className="w-full bg-green-primary text-white font-bold py-3 px-6 rounded-lg hover:bg-green-light transition-colors duration-300 cursor-pointer"
+                  disabled={submitting}
+                  className="w-full bg-green-primary text-white font-bold py-3 px-6 rounded-lg hover:bg-green-light transition-colors duration-300 cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
                 >
-                  Send Message
+                  {submitting ? "Sending..." : "Send Message"}
                 </button>
               </form>
             )}

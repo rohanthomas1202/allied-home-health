@@ -1,6 +1,6 @@
 import { Link } from "react-scroll";
-import { FaPhone, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
-import { COMPANY_NAME, TAGLINE, ENTITY_NAME, ADDRESS, PHONE, EMAIL, NAV_LINKS } from "../data/constants";
+import { FaPhone, FaFax, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+import { COMPANY_NAME, TAGLINE, ENTITY_NAME, ADDRESS, PHONE, FAX, EMAIL, NAV_LINKS } from "../data/constants";
 
 export default function Footer() {
   return (
@@ -45,6 +45,10 @@ export default function Footer() {
               <li className="flex items-center gap-3">
                 <FaPhone className="text-green-light shrink-0" />
                 <a href={`tel:${PHONE}`} className="hover:text-green-light transition-colors">{PHONE}</a>
+              </li>
+              <li className="flex items-center gap-3">
+                <FaFax className="text-green-light shrink-0" />
+                <span>Fax: {FAX}</span>
               </li>
               <li className="flex items-center gap-3">
                 <FaEnvelope className="text-green-light shrink-0" />

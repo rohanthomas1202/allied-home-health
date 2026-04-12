@@ -2,8 +2,10 @@ export const COMPANY_NAME = "Allied Home Health Care";
 export const TAGLINE = "Excellence in Home Health";
 export const ENTITY_NAME = "Allied Home Healthcare Services Inc";
 export const ADDRESS = "1925 E Belt Line Road, Suite 204, Carrollton, TX 75006";
-export const PHONE = "469-410-1383";
-export const EMAIL = "alliedhomehealthcare24@gmail.com";
+export const PHONE = "972-620-2006";
+export const FAX = "972-476-1093";
+export const EMAIL = "alliedhomehealth284@gmail.com";
+export const FORMSPREE_ID = "mdaynnlk";
 
 export const HOURS = {
   weekday: "Mon - Sat: Open 24 Hours",
