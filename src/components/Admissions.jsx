@@ -5,8 +5,9 @@ import { ADMISSION_CRITERIA, REFERRAL_SOURCES } from "../data/constants";
 
 export default function Admissions() {
   return (
-    <section id="admissions" className="py-20 px-4 sm:px-6 bg-black">
-      <div className="max-w-[980px] mx-auto">
+    <section id="admissions" className="py-20 px-4 sm:px-6 relative">
+      <div className="absolute inset-0 bg-black/80" />
+      <div className="relative z-10 max-w-[980px] mx-auto">
         <SectionHeading title="Admissions & Referrals" dark={true} />
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-[820px] mx-auto">

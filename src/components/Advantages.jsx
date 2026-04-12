@@ -26,8 +26,9 @@ const advantages = [
 
 export default function Advantages() {
   return (
-    <section id="advantages" className="py-20 px-4 sm:px-6 bg-black">
-      <div className="max-w-[980px] mx-auto">
+    <section id="advantages" className="py-20 px-4 sm:px-6 relative">
+      <div className="absolute inset-0 bg-black/80" />
+      <div className="relative z-10 max-w-[980px] mx-auto">
         <SectionHeading
           title="Why Choose Allied?"
           subtitle="Advantages of Allied Home Health Care"

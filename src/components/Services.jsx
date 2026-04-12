@@ -4,8 +4,9 @@ import services from "../data/services";
 
 export default function Services() {
   return (
-    <section id="services" className="py-20 px-4 sm:px-6 bg-black">
-      <div className="max-w-[980px] mx-auto">
+    <section id="services" className="py-20 px-4 sm:px-6 relative">
+      <div className="absolute inset-0 bg-black/80" />
+      <div className="relative z-10 max-w-[980px] mx-auto">
         <SectionHeading
           title="Our Medical Services"
           subtitle="Comprehensive home health care tailored to your needs"
