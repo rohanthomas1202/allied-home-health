@@ -9,6 +9,7 @@ import Admissions from "./components/Admissions";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import heroBg from "./assets/premium_photo.avif";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <Contact />
       </main>
       <Footer />
+      <SpeedInsights />
     </div>
   );
 }
